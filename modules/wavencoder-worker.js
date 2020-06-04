@@ -1,0 +1,1 @@
+self.importScripts("../vendor/wavefile.js"),self.onmessage=function(e){let a=new wavefile.WaveFile;a.fromScratch(1,e.data.sampleRate,"32f",e.data.array),a.toBitDepth("24");let t=new Blob([a.toBuffer()],{type:"audio/wav"}),l={dialId:e.data.dialId,blob:t};this.postMessage(l)};
